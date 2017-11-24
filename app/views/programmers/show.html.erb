@@ -12,7 +12,7 @@
 
   <div class="col-md-9 programmer-info">
 
-    <p>
+    <!-- <p>
     <strong>Home Country:</strong> <%= @programmer.home_country %><br>
     </p>
 
@@ -22,7 +22,12 @@
 
     <p>
     <strong>Claim To Fame:</strong> <%= @programmer.claim_to_fame %>
-    </p>
+    </p> -->
+
+    <!-- replace above with the following partial call -->
+    <%= render partial: 'attribute', locals: {text: 'home country', programmer_attr: @programmer.home_country}%>
+    <%= render partial: 'attribute', locals: {text: 'quote', programmer_attr: @programmer.quote}%>
+    <%= render partial: 'attribute', locals: {text: 'claim to fame', programmer_attr: @programmer.claim_to_fame}%>
 
     <p>
     <%= link_to "Learn more about #{@programmer.name}", @programmer.wikipedia_page, target: '_blank' %>
@@ -30,4 +35,3 @@
 
   </div>
 </div>
-
